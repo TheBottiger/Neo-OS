@@ -66,10 +66,10 @@
 #endif
 
 // CHANGE THIS TO BE YOUR PROJECT'S STUFF
-const std::string OSProject = "WireOS";
-const std::string OSBranch = "snowboy";
-const std::string Creator = "By Wire/kercre123";
-const std::string CreatorWebsite = "keriganc.com";
+const std::string OSProject = "NeoOS";
+const std::string OSBranch = "Main";
+const std::string Creator = "By The Bottiger";
+const std::string CreatorWebsite = "Github.com/TheBottiger";
 
 // Log options
 #define LOG_CHANNEL    "FaceInfoScreenManager"
@@ -223,9 +223,9 @@ void FaceInfoScreenManager::Init(Anim::AnimContext* context, Anim::AnimationStre
   ADD_SCREEN(FAC, None);
   ADD_SCREEN(CustomText, None);
   ADD_SCREEN(Main, Network);
-  ADD_SCREEN_WITH_TEXT(ClearUserData, Main, {"CLEAR OUT SOUL?"});
+  ADD_SCREEN_WITH_TEXT(ClearUserData, Main, {"Are you sure yo want to EXPLODE Vector?"});
   ADD_SCREEN_WITH_TEXT(ClearUserDataFail, Main, {"UNABLE TO CLEAR SOUL"});
-  ADD_SCREEN_WITH_TEXT(Rebooting, Rebooting, {"Vector will remember that..."});
+  ADD_SCREEN_WITH_TEXT(Rebooting, Rebooting, {"KABOOOOOM!!!!"});
   ADD_SCREEN_WITH_TEXT(SelfTest, Main, {"START SELF TEST?"});
   ADD_SCREEN(SelfTestRunning, SelfTestRunning)
   ADD_SCREEN(Network, SensorInfo);
@@ -329,7 +329,7 @@ void FaceInfoScreenManager::Init(Anim::AnimContext* context, Anim::AnimationStre
     RobotInterface::SendAnimToEngine(RobotInterface::StartSelfTest());
     return ScreenName::SelfTestRunning;
   };
-  ADD_MENU_ITEM_WITH_ACTION(SelfTest, "CONFIRM", confirmSelfTest);
+  ADD_MENU_ITEM_WITH_ACTION(SelfTest, "KABOOM?", confirmSelfTest);
   DISABLE_TIMEOUT(SelfTestRunning);
   
   // Clear User Data menu
@@ -345,8 +345,8 @@ void FaceInfoScreenManager::Init(Anim::AnimContext* context, Anim::AnimationStre
     this->Reboot();
     return ScreenName::Rebooting;
   };
-  ADD_MENU_ITEM(ClearUserData, "EXIT", Main);
-  ADD_MENU_ITEM_WITH_ACTION(ClearUserData, "CONFIRM", confirmClearUserData);
+  ADD_MENU_ITEM(ClearUserData, "Wuss", Main);
+  ADD_MENU_ITEM_WITH_ACTION(ClearUserData, "Kaoboom", confirmClearUserData);
   SET_TIMEOUT(ClearUserDataFail, 2.f, Main);
 
 
