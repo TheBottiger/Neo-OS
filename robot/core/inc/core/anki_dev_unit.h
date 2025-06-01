@@ -1,11 +1,8 @@
-#ifndef NEO_IMAGE_H
-#define NEO_IMAGE_H
+#ifndef __ANKI_PROPRIETARY_IMAGE_H_
+#define __ANKI_PROPRIETARY_IMAGE_H_
 
-#define NEO_IMAGE_WIDTH 128
-#define NEO_IMAGE_HEIGHT 128
-#define NEO_IMAGE_CHANNELS 3
+unsigned char anki_dev_unit[] = {
 
-static const unsigned char neo_image_data[49152] = {
 
     17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 
     17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 
@@ -4104,5 +4101,7 @@ static const unsigned char neo_image_data[49152] = {
     17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 
     17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 
 };
+unsigned int anki_dev_unit_len = 35328;
 
-#endif // NEO_IMAGE_H
+#endif
+
