@@ -345,8 +345,8 @@ void FaceInfoScreenManager::Init(Anim::AnimContext* context, Anim::AnimationStre
     this->Reboot();
     return ScreenName::Rebooting;
   };
-  ADD_MENU_ITEM(ClearUserData, "Kaboom?", Main);
-  ADD_MENU_ITEM_WITH_ACTION(ClearUserData, "Kaoboom", confirmClearUserData);
+  ADD_MENU_ITEM(ClearUserData, "Wuss", Main);
+  ADD_MENU_ITEM_WITH_ACTION(ClearUserData, "Kaboom?", confirmClearUserData);
   SET_TIMEOUT(ClearUserDataFail, 2.f, Main);
 
 
