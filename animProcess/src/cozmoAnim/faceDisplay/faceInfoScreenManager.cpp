@@ -223,7 +223,7 @@ void FaceInfoScreenManager::Init(Anim::AnimContext* context, Anim::AnimationStre
   ADD_SCREEN(FAC, None);
   ADD_SCREEN(CustomText, None);
   ADD_SCREEN(Main, Network);
-  ADD_SCREEN_WITH_TEXT(ClearUserData, Main, {"Are you sure you want to EXPLODE Vector?"});
+  ADD_SCREEN_WITH_TEXT(ClearUserData, Main, {"Vector go Kaboom?"});
   ADD_SCREEN_WITH_TEXT(ClearUserDataFail, Main, {"UNABLE TO CLEAR SOUL"});
   ADD_SCREEN_WITH_TEXT(Rebooting, Rebooting, {"KABOOOOOM!!!!"});
   ADD_SCREEN_WITH_TEXT(SelfTest, Main, {"START SELF TEST?"});
@@ -318,7 +318,7 @@ void FaceInfoScreenManager::Init(Anim::AnimContext* context, Anim::AnimationStre
 #if ENABLE_SELF_TEST
   ADD_MENU_ITEM(Main, IsXray() ? "TEST" : "SELF TEST", SelfTest);
 #endif
-  ADD_MENU_ITEM(Main, IsXray() ? "Wuss" : "Kaboom?", ClearUserData);
+  ADD_MENU_ITEM(Main, IsXray() ? "Kaboom?" : "Kaboom?", ClearUserData);
 
   // === Self test screen ===
   ADD_MENU_ITEM(SelfTest, "EXIT", Main);
@@ -345,7 +345,7 @@ void FaceInfoScreenManager::Init(Anim::AnimContext* context, Anim::AnimationStre
     this->Reboot();
     return ScreenName::Rebooting;
   };
-  ADD_MENU_ITEM(ClearUserData, "Wuss", Main);
+  ADD_MENU_ITEM(ClearUserData, "Kaboom?", Main);
   ADD_MENU_ITEM_WITH_ACTION(ClearUserData, "Kaoboom", confirmClearUserData);
   SET_TIMEOUT(ClearUserDataFail, 2.f, Main);
 
