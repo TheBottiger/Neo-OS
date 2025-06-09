@@ -111,13 +111,13 @@ namespace BackpackLightController {
     {
       u32 color;
       if(i == 0) {
-        color = 0x80ff0000; // red for back led
+        color = 0x8000FF33; // red for back led
       } else if(i == 1) {
-        color = 0x8000ff00; // green for middle led
+        color = 0x8000CC66; // green for middle led
       } else if(i == 2) {
-        color = 0x800000ff; // blue for top led
+        color = 0x8066FFB2; // blue for top led
       } else {
-        color = 0x80808000; // fallback color
+        color = 0x80003311; // fallback color
       }
     
       _ledParams[(int)BackpackLightLayer::BPL_USER].lights[i] = {
