@@ -117,7 +117,7 @@ namespace BackpackLightController {
       } else if(i == 2) {
         color = 0xFF00FF00;
       } else {
-        color = 0xFF556B2F; // fallback: dark mossy green
+        color = 0x8000FF00; // fallback: dark mossy green
       }
     
       _ledParams[(int)BackpackLightLayer::BPL_USER].lights[i] = {
