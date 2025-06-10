@@ -107,17 +107,17 @@ namespace BackpackLightController {
     memset(&_ledParams[(int)BackpackLightLayer::BPL_USER], 0, sizeof(_ledParams[(int)BackpackLightLayer::BPL_USER]));
 
     const u16 kTimeDiff_ms = 1000;
-    for(u8 i = 0; i < (u8)LEDId::NUM_BACKPACK_LEDS; i++)
+        for(u8 i = 0; i < (u8)LEDId::NUM_BACKPACK_LEDS; i++)
     {
-      u32 color; // Purple lights
+      u32 color; // Green lights
       if(i == 0) {
-        color = 0xff07b5f5;
+        color = 0xFF00FF00;
       } else if(i == 1) {
-        color = 0xff07b5f5;
+        color = 0xFF00FF00;
       } else if(i == 2) {
-        color = 0xff07b5f5;
+        color = 0xFF00FF00;
       } else {
-        color = 0x80808000; // fallback color
+        color = 0xFF556B2F; // fallback: dark mossy green
       }
     
       _ledParams[(int)BackpackLightLayer::BPL_USER].lights[i] = {
