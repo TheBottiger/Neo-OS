@@ -584,13 +584,13 @@ void BehaviorReactToVoiceCommand::BehaviorUpdate()
       }
     }
   }
-
-  if ( ( _dVars.state != EState::ListeningGetIn ) && !IsControlDelegated() )
+else if ( _dVars.state == EState::Thinking )
   {
-    CancelSelf();
+    // we may receive an intent AFTER we're done listening for various reasons,
+    // so poll for it while we're in the thinking state
+    // note: does nothing if intent is already setMore actions
+    UpdateUserIntentStatus();
   }
-}
-
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 void BehaviorReactToVoiceCommand::ComputeReactionDirectionFromStream()
 {
@@ -763,7 +763,6 @@ void BehaviorReactToVoiceCommand::StopListening()
   OnStreamingEnd();
 
   UpdateUserIntentStatus();
-  OnVictorListeningEnd();
   TransitionToThinking();
 }
 
@@ -900,7 +899,7 @@ void BehaviorReactToVoiceCommand::TransitionToThinking()
       return;
     }
 
-    // Play a reaction behavior if we were told to ...
+     OnVictorListeningEnd();
     // ** only in the case that we've heard a valid intent **
     const bool heardValidIntent = ( _dVars.intentStatus == EIntentStatus::IntentHeard );
     if ( heardValidIntent && _iVars.reactionBehavior )
@@ -913,7 +912,7 @@ void BehaviorReactToVoiceCommand::TransitionToThinking()
         LOG_DEBUG( "BehaviorReactToVoiceCommand.Thinking.SetReactionDirection",
                    "Setting reaction behavior direction to [%d]",
                    (int)triggerDirection );
-
+                  UpdateUserIntentStatus();
         // allow the reaction to not want to run in certain directions/states
         if ( _iVars.reactionBehavior->WantsToBeActivated() )
         {
