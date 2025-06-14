@@ -1,5 +1,4 @@
-# victor
-
+# Neo-OS
 Welcome to `victor`. This is the home of the Anki Vector robot's source code. Original README: [README-orig.md](/README-orig.md)
 
 Check the [wiki](https://github.com/kercre123/victor/wiki) for more information about the leak, what we can do with this, and general Vector info.
@@ -16,8 +15,8 @@ Check the [wiki](https://github.com/kercre123/victor/wiki) for more information 
 
 ```
 cd ~
-git clone --recurse-submodules https://github.com/os-vector/wire-os-victor
-cd wire-os-victor
+git clone --recurse-submodules https://github.com/TheBottiger/Neo-OS.git
+cd Neo-OS
 ```
 
 2. Make sure you can run Docker as a normal user. This will probably involve:
@@ -32,7 +31,7 @@ sudo chmod 660 /var/run/docker.sock
 
 3. Run the build script:
 ```
-cd ~/wire-os-victor
+cd ~/Neo-OS
 ./build/build-v.sh
 ```
 
@@ -49,8 +48,8 @@ cd ~/wire-os-victor
 
 ```
 cd ~
-git clone --recurse-submodules https://github.com/kercre123/victor -b snowboy
-cd victor
+git clone --recurse-submodules https://github.com/TheBottiger/Neo-OS.git -b snowboy
+cd Neo-OS
 git lfs install
 git lfs pull
 ```
@@ -81,7 +80,7 @@ sudo spctl --global-disable
 
 4. Run the build script:
 ```
-cd ~/wire-os-victor
+cd ~/Neo-OS
 ./build/build-v.sh
 ```
 
@@ -100,5 +99,5 @@ echo 192.168.1.150 > robot_ip.txt
 3. Run:
 
 ```
-./build/deploy-d.sh
+./build/deploy-v.sh
 ```
