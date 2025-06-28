@@ -1,4 +1,3 @@
 [submodule "EXTERNALS"]
 	path = EXTERNALS
-	url = https://github.com/TheBottiger/EXTERNALS
-	branch = anims
+	url = https://github.com/TheBottiger/EXTERNALS.git
