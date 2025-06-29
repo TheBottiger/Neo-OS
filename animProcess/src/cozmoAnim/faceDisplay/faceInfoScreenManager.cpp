@@ -68,7 +68,7 @@
 // CHANGE THIS TO BE YOUR PROJECT'S STUFF
 const std::string OSProject = "NeoOS";
 const std::string OSBranch = "Main";
-const std::string Creator = "By The Bottiger";
+const std::string Creator = "By TheBottiger";
 const std::string CreatorWebsite = "Github.com/TheBottiger";
 
 // Log options
